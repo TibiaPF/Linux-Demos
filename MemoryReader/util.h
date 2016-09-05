@@ -3,6 +3,7 @@
 
 #include "QString"
 #include "QMessageBox"
+#include <stdio.h>
 
 class Util
 {
