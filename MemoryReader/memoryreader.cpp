@@ -12,7 +12,7 @@ MemoryReader::MemoryReader(){
 
 int MemoryReader::ReadInt(int Address) {
     PeekPause();
-    int res = this->PeekRead(Address);
+    int res = PeekRead(Address);
     PeekUnpause();
     return res;
 }
