@@ -17,16 +17,16 @@ using namespace std;
 
 Client::Client()
 {
-    int pid = -1;
-    string procName = "Tibia";
-    DIR *dp = opendir("/proc");
-    if (dp != NULL) {
+    int ProcessId = -1;
+    string ProcessName = "Tibia";
+    DIR *ProcessDirectory = opendir("/proc");
+    if (ProcessDirectory != NULL) {
         struct dirent * dirp;
-        while (pid < 0 && (dirp = readdir(dp))) {
+        while (ProcessId < 0 && (dirp = readdir(ProcessDirectory))) {
             int id = atoi(dirp->d_name);
             if (id > 0) {
-                string cmdPath = string("/proc/") + dirp->d_name + "/cmdline";
-                ifstream cmdFile(cmdPath.c_str());
+                string cmProcessDirectoryath = string("/proc/") + dirp->d_name + "/cmdline";
+                ifstream cmdFile(cmProcessDirectoryath.c_str());
                 string cmdLine;
                 getline(cmdFile, cmdLine);
                 if (!cmdLine.empty())
@@ -39,7 +39,7 @@ Client::Client()
                     if (pos != string::npos) {
                         cmdLine = cmdLine.substr(pos + 1);
                     }
-                    if (procName == cmdLine) {
+                    if (ProcessName == cmdLine) {
                         this->processID = id;
                     }
                 }
