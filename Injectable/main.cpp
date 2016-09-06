@@ -7,7 +7,7 @@ __attribute__((constructor))
 void loadDll()
 {
   ofstream outfile;
-  outfile.open("/home/josh/test.txt");
+  outfile.open("/tmp/test.txt");
   outfile << "This is a sample string" << endl;
   outfile.close();
 }
