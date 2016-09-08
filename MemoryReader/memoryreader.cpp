@@ -34,7 +34,7 @@ int MemoryReader::PeekRead(int Address) {
     int value = ptrace(PTRACE_PEEKDATA, c.processID, Address, 0);
     if (errno != 0)
     {
-        Util::Alert("We dun fucked up.", errno);
+        Util::Alert("We dun fucked up.", stderror(errno));
     }
     return value;
 }
